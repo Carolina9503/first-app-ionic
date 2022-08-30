@@ -17,4 +17,11 @@ export class ModalInfoPage implements OnInit {
   salirSinArgumentos(){
   this.modalCtrl.dismiss();
   }
+
+  salirConArgumentos(){
+    this.modalCtrl.dismiss({
+      nombre: 'Felipe',
+      pais: 'España'
+    });
+  }
 }

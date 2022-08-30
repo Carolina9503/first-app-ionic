@@ -23,5 +23,10 @@ export class ModalPage implements OnInit {
       }
     });
     await modal.present();
+
+    // diferencias entre onDidDismiss y onWillDismiss(se cierra inmediatamente antes de que empiece a hacerce la animacion)
+    // const {data} = await modal.onDidDismiss();
+    const {data} = await modal.onWillDismiss();
+    console.log('onWillDismiss');
   }
 }
