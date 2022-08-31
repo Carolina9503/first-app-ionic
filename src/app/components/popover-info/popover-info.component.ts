@@ -6,7 +6,7 @@ import { Component, OnInit } from '@angular/core';
   styleUrls: ['./popover-info.component.scss'],
 })
 export class PopoverInfoComponent implements OnInit {
-
+  items = Array(40);
   constructor() { }
 
   ngOnInit() {}
