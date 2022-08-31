@@ -1,0 +1,22 @@
+<ion-header>
+  <ion-toolbar>
+    <ion-title>Search</ion-title>
+  </ion-toolbar>
+  <ion-searchbar
+    placeholder="Buscar albun" 
+    animated inputmode="text"
+    (ionChange)="onSearchChange($event)"
+    [debounce]="250"
+  > 
+  </ion-searchbar>
+</ion-header>
+
+<ion-content>
+  <ion-list>
+    <ion-item *ngFor="let albun of albunes">
+      <ion-label>{{albun.title}}</ion-label>
+    </ion-item>
+    
+  </ion-list>
+
+</ion-content>
