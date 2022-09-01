@@ -10,7 +10,7 @@ export class FiltroPipe implements PipeTransform {
     if (texto === '') {
       return arreglo;
     }
-
+    // si el arreglo viene basio osea diferente de null
     if (!arreglo) {
       return arreglo;
     }
