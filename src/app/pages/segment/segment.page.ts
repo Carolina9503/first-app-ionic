@@ -1,4 +1,7 @@
 import { Component, OnInit } from '@angular/core';
+import { Observable } from 'rxjs';
+
+import { DataService } from 'src/app/services/data.service';
 
 @Component({
   selector: 'app-segment',
@@ -6,10 +9,18 @@ import { Component, OnInit } from '@angular/core';
   styleUrls: ['./segment.page.scss'],
 })
 export class SegmentPage implements OnInit {
+  superHeroes: Observable<any>;
+  buscarPublisher: string;
 
-  constructor() { }
+  constructor(private dataService: DataService) { }
 
   ngOnInit() {
+    this.superHeroes = this.dataService.getHeroes();
+  }
+
+  segmentChanged(event){
+    console.log(event.detail.value);
+    this.buscarPublisher = event.detail.value;
   }
 
 }
