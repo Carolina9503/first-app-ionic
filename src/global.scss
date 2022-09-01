@@ -30,3 +30,7 @@
 .ion-item{
     --background:transparent;
 }
+// quitarle la sombra al icon del search de busqueda
+ion-searchbar {
+    --box-shadow: none !important;
+}
