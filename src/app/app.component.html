@@ -1,26 +1,31 @@
 <ion-app>
+  <ion-split-pane when="md" contentId="main">
 
-  <ion-menu side="start" menuId="first" contentId="main">
-    <ion-header>
-      <ion-toolbar color="primary">
-        <ion-title>Start Menu</ion-title>
-      </ion-toolbar>
-    </ion-header>
-    <ion-content>
-      <ion-list>
-        <!-- se usa ion-menu-toggle para que al tocar la opcion del menu me navegue hacia alla y se cierre -->
-        <ion-menu-toggle *ngFor="let menu of componentes | async">
-          <ion-item [routerLink]="menu.redirectTo" detail>
-            <ion-icon slot="start" [name]="menu.icon" color="primary"></ion-icon>
-            {{menu.name}}
-          </ion-item>
-
-        </ion-menu-toggle>
-       
-      </ion-list>
-    </ion-content>
-  </ion-menu>
-
-
-  <ion-router-outlet id="main" ></ion-router-outlet>
+    <ion-menu side="start" menuId="first" contentId="main">
+      <ion-header>
+        <ion-toolbar color="primary">
+          <ion-title>Start Menu</ion-title>
+        </ion-toolbar>
+      </ion-header>
+      <ion-content>
+        <ion-list>
+          <!-- se usa ion-menu-toggle para que al tocar la opcion del menu me navegue hacia alla y se cierre -->
+          <ion-menu-toggle *ngFor="let menu of componentes | async"
+                            [autoHide]="false">
+            <ion-item [routerLink]="menu.redirectTo" detail>
+              <ion-icon slot="start" [name]="menu.icon" color="primary"></ion-icon>
+              {{menu.name}}
+            </ion-item>
+  
+          </ion-menu-toggle>
+         
+        </ion-list>
+      </ion-content>
+    </ion-menu>
+  
+  
+    <ion-router-outlet id="main" ></ion-router-outlet>
+    
+  </ion-split-pane>
+  
 </ion-app>
